@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create To Do List Item
+# Delete all existing items
+Item.destroy_all
+
+# Create new items to do
+Item.create(details: "Need to learn Rails", completed: false)
+Item.create(details: "Need to learn Maths", completed: false)
+Item.create(details: "Need to pass my Rails Assessment", completed: false)
+Item.create(details: "Need to pass my Maths Test", completed: false)
