@@ -11,7 +11,7 @@
 Item.destroy_all
 
 # Create new items to do
-Item.create(details: "Need to learn Rails", completed: false)
-Item.create(details: "Need to learn Maths", completed: false)
-Item.create(details: "Need to pass my Rails Assessment", completed: false)
-Item.create(details: "Need to pass my Maths Test", completed: false)
+Item.create(details: "Need to learn Rails")
+Item.create(details: "Need to learn Maths")
+Item.create(details: "Need to pass my Rails Assessment")
+Item.create(details: "Need to pass my Maths Test")

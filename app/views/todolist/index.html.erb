@@ -1,16 +1,26 @@
 <h1>My To Do List</h1>
 
-<td><%= link_to('Add New Item', {:controller => 'add', :action => 'index'}) %></td>
+<%=form_with model:@item do |form| %>
+ <table>
+   <tr>
+     <td><%= "Add a New Item:"%></td>
+     <%= form.text_field :details %></td>
+   </tr>
+   <tr>
+     <td><%= form.submit "Add", class: "button-class"%></td>
+   </tr>
+ </table>
+<%end%>
 
 <table>
   <tr>
     <th>Details</th>
-    <th>Completed</th>
   </tr>
   <% @item.each do |item| %>
   <tr>
     <td><%= item.details %></td>
-    <td><%= item.completed %> 
+    <td><%= link_to('Edit', {:action => 'edit'}) %></td>
+    <td><%= link_to('Delete', {:action => 'delete'}) %></td>
   </tr>
   <%end%>
 </table>
