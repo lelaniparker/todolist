@@ -1,26 +1,7 @@
 <h1>My To Do List</h1>
 
-<%=form_with model:@item do |form| %>
- <table>
-   <tr>
-     <td><%= "Add a New Item:"%></td>
-     <%= form.text_field :details %></td>
-   </tr>
-   <tr>
-     <td><%= form.submit "Add", class: "button-class"%></td>
-   </tr>
- </table>
-<%end%>
+    <%= form_with model: @item do |f| %>
+  <%= f.text_field :details, required: true, minlength: 100 %>
+  <%= f.submit "Add New Item"%>
+<% end %>
 
-<table>
-  <tr>
-    <th>Details</th>
-  </tr>
-  <% @item.each do |item| %>
-  <tr>
-    <td><%= item.details %></td>
-    <td><%= link_to('Edit', {:action => 'edit'}) %></td>
-    <td><%= link_to('Delete', {:action => 'delete'}) %></td>
-  </tr>
-  <%end%>
-</table>
