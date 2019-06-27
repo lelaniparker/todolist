@@ -8,15 +8,12 @@ class TodolistController < ApplicationController
   end 
 
   def create 
-    @item = Item.create(params[:details]) 
-    if @item.save 
-      redirect_to '/' 
-    else 
-      render 'new' 
-    end 
+    @item = Item.create_item(params[:details]) 
+    redirect_to todolist_index_path
   end 
 
   # def edit
+    
   # end
 
   # def delete

@@ -1,7 +1,22 @@
 <h1>My To Do List</h1>
 
-    <%= form_with model: @item do |f| %>
-  <%= f.text_field :details, required: true, minlength: 100 %>
-  <%= f.submit "Add New Item"%>
-<% end %>
+<div class="new">
+  <%= form_with model: @item do |f| %>
+    <%= f.text_field :details, required: true %>
+    <%= f.submit "Add New Item", class: "button"%>
+  <% end %>
+</div>
 
+<div class="list">
+  <table>
+    <tr>
+      <th>Details</th>
+    </tr>
+    <% @items.each do |item| %>
+    <tr>
+      <td><%= item.details %></td>
+      
+    </tr>
+    <%end%>
+  </table>
+</div>
