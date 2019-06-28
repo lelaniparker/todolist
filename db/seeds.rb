@@ -15,3 +15,13 @@ Item.create(details: "Need to learn Rails")
 Item.create(details: "Need to learn Maths")
 Item.create(details: "Need to pass my Rails Assessment")
 Item.create(details: "Need to pass my Maths Test")
+
+Item.destroy_all
+
+# Create new items to do
+Item.create(details: "Need to learn Rails")
+Item.create(details: "Need to learn Maths")
+Item.create(details: "Need to pass my Rails Assessment")
+Item.create(details: "Need to pass my Maths Test")
+
+Item.destroy_all
