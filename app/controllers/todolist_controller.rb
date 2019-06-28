@@ -8,8 +8,9 @@ class TodolistController < ApplicationController
   end 
 
   def create 
-    @item = Item.create_item(params[:details]) 
+    @item = Item.new(params[:details]) 
     redirect_to todolist_index_path
+
   end 
 
   # def edit

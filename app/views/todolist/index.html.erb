@@ -1,10 +1,7 @@
 <h1>My To Do List</h1>
 
 <div class="new">
-  <%= form_with model: @item do |f| %>
-    <%= f.text_field :details, required: true %>
-    <%= f.submit "Add New Item", class: "button"%>
-  <% end %>
+<p><a href="items/new">Add a New Item</a></p>
 </div>
 
 <div class="list">
@@ -12,10 +9,11 @@
     <tr>
       <th>Details</th>
     </tr>
-    <% @items.each do |item| %>
+      <% @items.each do |item| %>
     <tr>
-      <td><%= item.details %></td>
-      
+      <td>
+      <%= item.details %>
+        </td>
     </tr>
     <%end%>
   </table>

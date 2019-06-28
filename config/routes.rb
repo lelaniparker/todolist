@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root to: "todolist#index"
   get "todolist/index"
   get "todolist/new"
   get "todolist/create"
+  root to: "todolist#index"
 
-  get "todolist/new", to: "todolist#new", as: "new_item" 
-  post "new", to: "todolist#create"
+  get "/items/new", to: "todolist#new", as: "new_item" 
+  post "items", to: "todolist#create"
   
   #resources :items, only: %i[edit update destroy]
 
