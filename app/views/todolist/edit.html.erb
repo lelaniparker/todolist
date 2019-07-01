@@ -1,0 +1,8 @@
+<h1>Update your items</h1>
+
+<div class="new">
+  <%= form_with model: @item, local: true do |f| %>
+    <%= f.text_field :details, required: true %>
+    <%= f.submit "Edit Item", :class => "button" %>
+  <% end %>
+</div>

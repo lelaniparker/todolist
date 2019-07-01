@@ -15,11 +15,14 @@ class TodolistController < ApplicationController
     end
   end 
 
-  # def edit
-    
-  # end
+  def edit
+    @item = Item.find(params[:id])
+  end
 
-  # def delete
-  # end
+  def update
+  end
+
+  def destroy
+  end
 
 end

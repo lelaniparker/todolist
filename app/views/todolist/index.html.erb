@@ -14,9 +14,9 @@
     </tr>
       <% @items.each do |item| %>
     <tr>
-      <td>
-      <%= item.details %>
-        </td>
+      <td><%= item.details %></td>
+      <td><%= link_to 'Edit', edit_item_path(item)  %></td> 
+      <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
     </tr>
     <%end%>
   </table>
