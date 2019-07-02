@@ -17,11 +17,14 @@ class TodolistController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+
   end
 
   def update
     @item = Item.find(params[:id])
-    if @item.save redirect_to todolist_index_path 
+    @item.details = params[:item][:details]
+    if @item.save 
+      redirect_to todolist_index_path 
     else
       render 'edit'
     end

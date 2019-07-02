@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   
   # Edits/ updates item
   get "/items/:id/edit", to: "todolist#edit", as: "edit_item"
-  patch "/items/:id", to: "todolist#update"
+  patch "/items/:id", to: "todolist#update", as: "item"
   put "/items/:id", to: "todolist#update"
 
   # Destroys item
-  delete "/items/:id", to: "todolist#destroy" #, as: "delete_item"
+  delete "/items/:id", to: "todolist#destroy" , as: "delete_item"
 end
