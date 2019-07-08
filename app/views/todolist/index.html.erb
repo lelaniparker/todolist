@@ -15,15 +15,16 @@
     </tr>
       <% @items.each do |item| %>
     <tr>
-      <%= form_with model: @item do |form|%>
-      <td><%= form.check_box :completed %></td>
-
-      
+      <td><%= form_with model: item do |form|%>
+      <%= form.check_box :completed, :onclick => "this.form.submit()" %>
       <% end%>
+      </td>
       <td><%= item.details %></td>
       <td><%= link_to 'Edit', edit_item_path(item)  %></td> 
       <td><%= link_to 'Delete', delete_item_path(item), method: "delete", data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <%end%>
   </table>
+
+
 </div>

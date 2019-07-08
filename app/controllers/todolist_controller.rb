@@ -22,9 +22,13 @@ class TodolistController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.details = params[:item][:details]
+
+    if params[:item].include?(:details)
+      @item.details = params[:item][:details]
+    end
+
     completed = params[:item][:completed]
-  
+    
     # if completed is '1' set completed = true
     if completed == '1'
       @item.completed = true
@@ -32,10 +36,6 @@ class TodolistController < ApplicationController
     # if completed is '0' set completed = false
       @item.completed = false
     end
-
-    # if completed.save
-    #   redirect_to todolist_index_path
-    # end
 
     if @item.save 
     else
